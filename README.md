@@ -1,4 +1,4 @@
-LicensePlistDetailViewController
+LicensePlistViewController
 ==
 
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
@@ -6,7 +6,7 @@ LicensePlistDetailViewController
 [![Language: Swift 4.0](https://img.shields.io/badge/swift-4.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/hsylife/SwiftyPickerPopover)
 
-LicensePlistDetailViewController is ViewController for [LicensePlist](https://github.com/mono0926/LicensePlist/).
+LicensePlistViewController is ViewController for [LicensePlist](https://github.com/mono0926/LicensePlist/).
 
 ![Screen shot](doc/screenshot1.png)
 ![Screen shot](doc/screenshot2.png)
@@ -18,7 +18,7 @@ LicensePlistDetailViewController is ViewController for [LicensePlist](https://gi
 Simply add the following line to your `Cartfile`:
 
 ```
-github "yhirano/LicensePlistDetailViewController"
+github "yhirano/LicensePlistViewController"
 ```
 
 ## Usage
