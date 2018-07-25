@@ -29,7 +29,7 @@ github "yhirano/LicensePlistDetailViewController"
 
 Example Homebrew:
 
-```console
+```
 brew install mono0926/license-plist/license-plist
 ```
 
@@ -41,7 +41,7 @@ Example command:
 
 On the directory same as `Cartfile` or `Pods`, simply execute `license-plist`.
 
-```console
+```
 license-plist
 ```
 
