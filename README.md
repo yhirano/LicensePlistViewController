@@ -56,7 +56,7 @@ Add reference `com.mono0926.LicensePlist.plist` file and `com.mono0926.LicensePl
 ### Call LicensePlistViewController
 
 ```swift
-let viewController = LicensePlistViewController(fileNamed: "com.mono0926.LicensePlist")
+let viewController = LicensePlistViewController()
 self.navigationController?.pushViewController(viewController, animated: true)
 ```
 

@@ -24,7 +24,8 @@
 import UIKit
 
 open class LicensePlistViewController: UITableViewController {
-    private let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
+    open static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
+    open static let defaultTitle = "License"
 
     private var items: [Item] = [] {
         didSet {
@@ -32,20 +33,21 @@ open class LicensePlistViewController: UITableViewController {
         }
     }
 
-    public convenience init(fileNamed fileName: String, title: String? = "License") {
+    public convenience init(fileNamed fileName: String, title: String? = LicensePlistViewController.defaultTitle) {
         let path = Bundle.main.path(forResource: fileName, ofType: "plist")
         self.init(plistPath: path, title: title)
     }
 
-    public init(plistPath: String?, title: String? = "License") {
+    public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
+                title: String? = LicensePlistViewController.defaultTitle) {
         super.init(style: .grouped)
         self.commonInit(plistPath: plistPath, title: title)
     }
 
     public required init(coder aDecoder: NSCoder) {
         super.init(style: .grouped)
-        let path = defaultPlistPath
-        self.commonInit(plistPath: path, title: "License")
+        self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
+                        title: LicensePlistViewController.defaultTitle)
     }
 
     private func commonInit(plistPath: String?, title: String?) {

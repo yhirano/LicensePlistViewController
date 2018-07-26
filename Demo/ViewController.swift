@@ -24,7 +24,7 @@ import LicensePlistViewContoller
 
 class ViewController: UIViewController {
     @IBAction func didTapGoToDemo(_ sender: Any) {
-        let viewController = LicensePlistViewController(fileNamed: "com.mono0926.LicensePlist")
+        let viewController = LicensePlistViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
