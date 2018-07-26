@@ -31,27 +31,26 @@ internal class LicensePlistParser {
         }
 
         let data = NSDictionary(contentsOfFile: plistPath)
-        if let root = data as? Dictionary<String, Any> {
-            return parseRoot(dictonary: root, directory: plistPath.deletingLastPathComponent)
+        guard let root = data as? Dictionary<String, Any> else {
+            return []
         }
-        return []
+        return parseRoot(dictonary: root, directory: plistPath.deletingLastPathComponent)
     }
 
     private static func parseRoot(dictonary dict: Dictionary<String, Any>, directory: String) -> [Item] {
-        let preferenceSpecifiers = dict["PreferenceSpecifiers"] as? [Any]
-        guard preferenceSpecifiers != nil, preferenceSpecifiers?.isEmpty == false else {
+        guard let preferenceSpecifiers = dict["PreferenceSpecifiers"] as? [Any],
+              preferenceSpecifiers.isEmpty == false else {
             return []
         }
 
-        return preferenceSpecifiers!
+        return preferenceSpecifiers
             .compactMap { $0 as? Dictionary<String, Any> }
             .map { v -> Item in
                 let title = v["Title"] as? String
                 let file = v["File"] as? String
                 if let file = file,
                    let filePath = directory.appendingPathComponent(file).appendingPathExtension("plist") {
-                    return Item(title: title,
-                                text: parseItem(filePath: filePath))
+                    return Item(title: title, text: parseItem(filePath: filePath))
                 } else {
                     return Item(title: title, text: nil)
                 }
@@ -59,22 +58,25 @@ internal class LicensePlistParser {
     }
 
     private static func parseItem(filePath: String) -> String? {
-        let data = NSDictionary(contentsOfFile: filePath)
-        if let dict = data as? Dictionary<String, Any> {
-            let preferenceSpecifiers = dict["PreferenceSpecifiers"] as? [Any]
-            guard preferenceSpecifiers != nil, preferenceSpecifiers?.isEmpty == false else {
-                return nil
-            }
-
-            return preferenceSpecifiers!
-                .compactMap { $0 as? Dictionary<String, Any> }
-                .map { v -> String? in
-                    return v["FooterText"] as? String
-                }
-                .compactMap { $0 }
-                .first
-        } else {
+        guard let data = NSDictionary(contentsOfFile: filePath), let dict = data as? Dictionary<String, Any> else {
             return nil
         }
+
+        guard let preferenceSpecifiers = dict["PreferenceSpecifiers"] as? [Any],
+              preferenceSpecifiers.isEmpty == false else {
+            return nil
+        }
+
+        // Seach "FooterText" in preferenceSpecifiers.
+        for preferenceSpecifier in preferenceSpecifiers {
+            guard let dict = preferenceSpecifier as? Dictionary<String, Any>,
+                  let footerText = dict["FooterText"] as? String else {
+                continue
+            }
+            return footerText
+        }
+
+        // Not found "FooterText" in preferenceSpecifiers.
+        return nil
     }
 }
