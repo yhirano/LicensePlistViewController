@@ -25,7 +25,7 @@ internal class LicensePlistDetailViewController: UIViewController {
     private let topMargin: CGFloat = 16
     private let bottomMargin: CGFloat = 16
 
-    let item: Item
+    private let item: Item
 
     private weak var textView: UITextView?
 
@@ -69,7 +69,7 @@ internal class LicensePlistDetailViewController: UIViewController {
         updateTextViewInsets()
     }
 
-    func updateTextViewInsets() {
+    private func updateTextViewInsets() {
         textView?.textContainerInset = UIEdgeInsetsMake(topMargin,
                                                         self.view.layoutMargins.left,
                                                         bottomMargin,
