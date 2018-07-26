@@ -59,6 +59,8 @@ internal class LicensePlistDetailViewController: UIViewController {
 
         updateTextViewInsets()
 
+        // Need to set the textView text after the layout is completed,
+        // so that the content inset and offset properties can be adjusted automatically.
         textView?.text = item.text
     }
 
