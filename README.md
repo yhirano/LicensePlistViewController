@@ -4,6 +4,7 @@ LicensePlistViewController
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mono0926/NativePopup/master/LICENSE)
 [![Language: Swift 4.0](https://img.shields.io/badge/swift-4.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Version](https://img.shields.io/cocoapods/v/LicensePlistViewController.svg?style=flat)](http://cocoadocs.org/docsets/LicensePlistViewController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/hsylife/SwiftyPickerPopover)
 
 LicensePlistViewController is ViewController for [LicensePlist](https://github.com/mono0926/LicensePlist/).
@@ -12,6 +13,14 @@ LicensePlistViewController is ViewController for [LicensePlist](https://github.c
 ![Screen shot](doc/screenshot2.png)
 
 ## Installation
+
+### CocoaPods
+
+Simply add the following line to your `Podfile`:
+
+```
+pod 'LicensePlistViewController'
+```
 
 ### Cartage
 
