@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E18304C2107BBA000352CF4 /* LicensePlistViewContoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LicensePlistViewContoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E18304C2107BBA000352CF4 /* LicensePlistViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LicensePlistViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1830502107BBA000352CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E18305B2107BCA400352CF4 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E18305D2107BCA400352CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		8E1830422107BBA000352CF4 = {
 			isa = PBXGroup;
 			children = (
-				8E18304E2107BBA000352CF4 /* LicensePlistViewContoller */,
+				8E18304E2107BBA000352CF4 /* LicensePlistViewController */,
 				8E18305C2107BCA400352CF4 /* Demo */,
 				8E18304D2107BBA000352CF4 /* Products */,
 			);
@@ -70,13 +70,13 @@
 		8E18304D2107BBA000352CF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E18304C2107BBA000352CF4 /* LicensePlistViewContoller.framework */,
+				8E18304C2107BBA000352CF4 /* LicensePlistViewController.framework */,
 				8E18305B2107BCA400352CF4 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E18304E2107BBA000352CF4 /* LicensePlistViewContoller */ = {
+		8E18304E2107BBA000352CF4 /* LicensePlistViewController */ = {
 			isa = PBXGroup;
 			children = (
 				8E18307C2107BE5500352CF4 /* LicensePlistViewController.swift */,
@@ -86,7 +86,7 @@
 				8E1830842107DBFB00352CF4 /* String+FilePath.swift */,
 				8E1830502107BBA000352CF4 /* Info.plist */,
 			);
-			path = LicensePlistViewContoller;
+			path = LicensePlistViewController;
 			sourceTree = "<group>";
 		};
 		8E18305C2107BCA400352CF4 /* Demo */ = {
@@ -117,9 +117,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8E18304B2107BBA000352CF4 /* LicensePlistViewContoller */ = {
+		8E18304B2107BBA000352CF4 /* LicensePlistViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E1830542107BBA000352CF4 /* Build configuration list for PBXNativeTarget "LicensePlistViewContoller" */;
+			buildConfigurationList = 8E1830542107BBA000352CF4 /* Build configuration list for PBXNativeTarget "LicensePlistViewController" */;
 			buildPhases = (
 				8E1830472107BBA000352CF4 /* Sources */,
 				8E1830482107BBA000352CF4 /* Frameworks */,
@@ -130,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = LicensePlistViewContoller;
+			name = LicensePlistViewController;
 			productName = LicensePlistViewContoller;
-			productReference = 8E18304C2107BBA000352CF4 /* LicensePlistViewContoller.framework */;
+			productReference = 8E18304C2107BBA000352CF4 /* LicensePlistViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8E18305A2107BCA400352CF4 /* Demo */ = {
@@ -171,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E1830462107BBA000352CF4 /* Build configuration list for PBXProject "LicensePlistViewContoller" */;
+			buildConfigurationList = 8E1830462107BBA000352CF4 /* Build configuration list for PBXProject "LicensePlistViewController" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,7 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E18304B2107BBA000352CF4 /* LicensePlistViewContoller */,
+				8E18304B2107BBA000352CF4 /* LicensePlistViewController */,
 				8E18305A2107BCA400352CF4 /* Demo */,
 			);
 		};
@@ -386,7 +386,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LicensePlistViewContoller/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LicensePlistViewController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +412,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LicensePlistViewContoller/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LicensePlistViewController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,7 +437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.yhirano.LicensePlistViewContoller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yhirano.LicensePlistViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +454,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.yhirano.LicensePlistViewContoller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yhirano.LicensePlistViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E1830462107BBA000352CF4 /* Build configuration list for PBXProject "LicensePlistViewContoller" */ = {
+		8E1830462107BBA000352CF4 /* Build configuration list for PBXProject "LicensePlistViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1830522107BBA000352CF4 /* Debug */,
@@ -473,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E1830542107BBA000352CF4 /* Build configuration list for PBXNativeTarget "LicensePlistViewContoller" */ = {
+		8E1830542107BBA000352CF4 /* Build configuration list for PBXNativeTarget "LicensePlistViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1830552107BBA000352CF4 /* Debug */,

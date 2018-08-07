@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import LicensePlistViewContoller
+import LicensePlistViewController
 
 class ViewController: UIViewController {
     @IBAction func didTapGoToDemo(_ sender: Any) {

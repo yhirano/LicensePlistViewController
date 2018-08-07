@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E18304B2107BBA000352CF4"
-               BuildableName = "LicensePlistViewContoller.framework"
-               BlueprintName = "LicensePlistViewContoller"
-               ReferencedContainer = "container:LicensePlistViewContoller.xcodeproj">
+               BuildableName = "LicensePlistViewController.framework"
+               BlueprintName = "LicensePlistViewController"
+               ReferencedContainer = "container:LicensePlistViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E18304B2107BBA000352CF4"
-            BuildableName = "LicensePlistViewContoller.framework"
-            BlueprintName = "LicensePlistViewContoller"
-            ReferencedContainer = "container:LicensePlistViewContoller.xcodeproj">
+            BuildableName = "LicensePlistViewController.framework"
+            BlueprintName = "LicensePlistViewController"
+            ReferencedContainer = "container:LicensePlistViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E18304B2107BBA000352CF4"
-            BuildableName = "LicensePlistViewContoller.framework"
-            BlueprintName = "LicensePlistViewContoller"
-            ReferencedContainer = "container:LicensePlistViewContoller.xcodeproj">
+            BuildableName = "LicensePlistViewController.framework"
+            BlueprintName = "LicensePlistViewController"
+            ReferencedContainer = "container:LicensePlistViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
