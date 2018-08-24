@@ -44,6 +44,12 @@ open class LicensePlistViewController: UITableViewController {
         self.commonInit(plistPath: plistPath, title: title)
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(style: .grouped)
+        self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
+                        title: LicensePlistViewController.defaultTitle)
+    }
+
     public required init(coder aDecoder: NSCoder) {
         super.init(style: .grouped)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
