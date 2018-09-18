@@ -24,8 +24,8 @@
 import UIKit
 
 open class LicensePlistViewController: UITableViewController {
-    open static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
-    open static let defaultTitle = "License"
+    public static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
+    public static let defaultTitle = "License"
 
     private var items: [Item] = [] {
         didSet {
