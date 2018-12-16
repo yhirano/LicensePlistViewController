@@ -1,6 +1,4 @@
 //
-// AcknowViewController.swift
-//
 // Copyright (c) 2018 Yuichi Hirano
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
