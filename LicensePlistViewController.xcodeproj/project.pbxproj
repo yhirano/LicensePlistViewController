@@ -19,6 +19,7 @@
 		8E1830832107CB6B00352CF4 /* LicensePlistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1830822107CB6B00352CF4 /* LicensePlistParser.swift */; };
 		8E1830852107DBFB00352CF4 /* String+FilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1830842107DBFB00352CF4 /* String+FilePath.swift */; };
 		8E1830A92107F82600352CF4 /* com.mono0926.LicensePlist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1830A82107F82600352CF4 /* com.mono0926.LicensePlist */; };
+		8EECE97A21C6884000A78DF9 /* LicensePlistViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E18304C2107BBA000352CF4 /* LicensePlistViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EECE97A21C6884000A78DF9 /* LicensePlistViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +66,7 @@
 				8E18304E2107BBA000352CF4 /* LicensePlistViewController */,
 				8E18305C2107BCA400352CF4 /* Demo */,
 				8E18304D2107BBA000352CF4 /* Products */,
+				8EECE97921C6884000A78DF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +105,13 @@
 				8E1830742107BDF500352CF4 /* com.mono0926.LicensePlist.plist */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		8EECE97921C6884000A78DF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
