@@ -91,12 +91,12 @@ extension LicensePlistViewController {
         if let dequeuedCell = dequeuedCell {
             cell = dequeuedCell
         } else {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellIdentifier)
         }
 
         let item = items[indexPath.row]
         cell.textLabel?.text = item.title
-        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell
     }
