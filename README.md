@@ -3,7 +3,7 @@ LicensePlistViewController
 
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
-[![Language: Swift 4.0](https://img.shields.io/badge/swift-4.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Language: Swift 5.0](https://img.shields.io/badge/swift-5.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![Version](https://img.shields.io/cocoapods/v/LicensePlistViewController.svg?style=flat)](http://cocoadocs.org/docsets/LicensePlistViewController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/hsylife/SwiftyPickerPopover)
 

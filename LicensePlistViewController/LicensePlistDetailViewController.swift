@@ -72,9 +72,9 @@ internal class LicensePlistDetailViewController: UIViewController {
     }
 
     private func updateTextViewInsets() {
-        textView?.textContainerInset = UIEdgeInsetsMake(topMargin,
-                                                        self.view.layoutMargins.left,
-                                                        bottomMargin,
-                                                        self.view.layoutMargins.right)
+        textView?.textContainerInset = UIEdgeInsets.init(top: topMargin,
+                                                        left: self.view.layoutMargins.left,
+                                                        bottom: bottomMargin,
+                                                        right: self.view.layoutMargins.right)
     }
 }
