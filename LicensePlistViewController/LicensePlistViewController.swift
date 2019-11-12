@@ -38,18 +38,18 @@ open class LicensePlistViewController: UITableViewController {
 
     public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
                 title: String? = LicensePlistViewController.defaultTitle) {
-        super.init(style: .grouped)
+        super.init(style: .plain)
         self.commonInit(plistPath: plistPath, title: title)
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(style: .grouped)
+        super.init(style: .plain)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
                         title: LicensePlistViewController.defaultTitle)
     }
 
     public required init(coder aDecoder: NSCoder) {
-        super.init(style: .grouped)
+        super.init(style: .plain)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
                         title: LicensePlistViewController.defaultTitle)
     }
@@ -68,8 +68,20 @@ open class LicensePlistViewController: UITableViewController {
                 self.navigationItem.leftBarButtonItem = item
             }
         }
+        
+        customizeTableViewVisual()
     }
 
+    fileprivate func customizeTableViewVisual() {
+        assert(tableView.style == .plain, "This customization assumes that the table view style is plain.")
+        
+        // Hide empty cells on display
+        tableView.tableFooterView = UIView()
+        
+        // Show background as if the table view style is grouped, which has a slightly different color from cells
+        tableView.backgroundColor = .groupTableViewBackground
+    }
+    
     // MARK: - Actions
     
     @IBAction open func dismissViewController(_ sender: AnyObject) {
