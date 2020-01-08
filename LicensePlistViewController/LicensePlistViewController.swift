@@ -24,6 +24,7 @@ import UIKit
 open class LicensePlistViewController: UITableViewController {
     public static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
     public static let defaultTitle = "License"
+    public static let defaultHeaderHight: CGFloat? = nil
 
     private var items: [Item] = [] {
         didSet {
@@ -31,32 +32,42 @@ open class LicensePlistViewController: UITableViewController {
         }
     }
 
-    public convenience init(fileNamed fileName: String, title: String? = LicensePlistViewController.defaultTitle) {
+    public convenience init(fileNamed fileName: String,
+                            title: String? = LicensePlistViewController.defaultTitle,
+                            headerHight: CGFloat? = LicensePlistViewController.defaultHeaderHight) {
         let path = Bundle.main.path(forResource: fileName, ofType: "plist")
-        self.init(plistPath: path, title: title)
+        self.init(plistPath: path, title: title, headerHight: headerHight)
     }
 
     public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
-                title: String? = LicensePlistViewController.defaultTitle) {
+                title: String? = LicensePlistViewController.defaultTitle,
+                headerHight: CGFloat? = LicensePlistViewController.defaultHeaderHight) {
         super.init(style: .grouped)
-        self.commonInit(plistPath: plistPath, title: title)
+        self.commonInit(plistPath: plistPath, title: title, headerHight: headerHight)
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(style: .grouped)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
-                        title: LicensePlistViewController.defaultTitle)
+                        title: LicensePlistViewController.defaultTitle,
+                        headerHight: LicensePlistViewController.defaultHeaderHight)
     }
 
     public required init(coder aDecoder: NSCoder) {
         super.init(style: .grouped)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
-                        title: LicensePlistViewController.defaultTitle)
+                        title: LicensePlistViewController.defaultTitle,
+                        headerHight: LicensePlistViewController.defaultHeaderHight)
     }
 
-    private func commonInit(plistPath: String?, title: String?) {
+    private func commonInit(plistPath: String?, title: String?, headerHight: CGFloat?) {
         self.title = title
         self.items = LicensePlistParser.parse(plistPath: plistPath)
+        if headerHight == 0 {
+            self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
+        } else if let headerHight = headerHight, headerHight > 0 {
+            self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: headerHight))
+        }
     }
 
     open override func viewDidLoad() {
