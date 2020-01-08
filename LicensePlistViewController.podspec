@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "LicensePlistViewController"
-  s.version       = "2.0"
+  s.version       = "2.1"
   s.summary       = "LicensePlistViewController is ViewController for LicensePlist."
   s.homepage      = "https://github.com/yhirano/LicensePlistViewController"
   s.license       = { :type => "MIT", :file => "LICENSE" }
