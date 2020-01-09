@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2018ー2020 Yuichi Hirano
+// Copyright (c) 2018-2020 Yuichi Hirano
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
