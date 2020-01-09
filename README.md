@@ -17,7 +17,7 @@ LicensePlistViewController is ViewController for [LicensePlist](https://github.c
 * Swift 5.0
 * iOS 9.0 or later
 
-If you use Swift 4.0, try to use 1.0.1
+If you use Swift 4.0, try to use 1.1
 
 ## Installation
 
