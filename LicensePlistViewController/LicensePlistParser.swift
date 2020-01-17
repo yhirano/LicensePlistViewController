@@ -45,6 +45,7 @@ internal class LicensePlistParser {
 
         return preferenceSpecifiers
             .compactMap { $0 as? Dictionary<String, Any> }
+            .filter { $0["Type"] as? String == "PSChildPaneSpecifier" }
             .map { v -> Item in
                 let title = v["Title"] as? String
                 let file = v["File"] as? String
