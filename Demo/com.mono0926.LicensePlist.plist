@@ -5,6 +5,12 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
+			<key>Title</key>
+			<string>Licenses</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/Alamofire</string>
 			<key>Title</key>
@@ -22,14 +28,6 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/aws-sdk-ios</string>
-			<key>Title</key>
-			<string>aws-sdk-ios</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>com.mono0926.LicensePlist/BWWalkthrough</string>
 			<key>Title</key>
 			<string>BWWalkthrough</string>
@@ -41,22 +39,6 @@
 			<string>com.mono0926.LicensePlist/Charts</string>
 			<key>Title</key>
 			<string>Charts</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/Eureka</string>
-			<key>Title</key>
-			<string>Eureka</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/firebase-ios-sdk</string>
-			<key>Title</key>
-			<string>firebase-ios-sdk</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
