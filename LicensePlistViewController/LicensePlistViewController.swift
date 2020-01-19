@@ -24,7 +24,7 @@ import UIKit
 open class LicensePlistViewController: UITableViewController {
     public static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
     public static let defaultTitle = "License"
-    public static let defaultHeaderHight: CGFloat? = nil
+    public static let defaultHeaderHeight: CGFloat? = nil
 
     private var items: [Item] = [] {
         didSet {
@@ -34,39 +34,39 @@ open class LicensePlistViewController: UITableViewController {
 
     public convenience init(fileNamed fileName: String,
                             title: String? = LicensePlistViewController.defaultTitle,
-                            headerHight: CGFloat? = LicensePlistViewController.defaultHeaderHight) {
+                            headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight) {
         let path = Bundle.main.path(forResource: fileName, ofType: "plist")
-        self.init(plistPath: path, title: title, headerHight: headerHight)
+        self.init(plistPath: path, title: title, headerHeight: headerHeight)
     }
 
     public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
                 title: String? = LicensePlistViewController.defaultTitle,
-                headerHight: CGFloat? = LicensePlistViewController.defaultHeaderHight) {
+                headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight) {
         super.init(style: .grouped)
-        self.commonInit(plistPath: plistPath, title: title, headerHight: headerHight)
+        self.commonInit(plistPath: plistPath, title: title, headerHeight: headerHeight)
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(style: .grouped)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
                         title: LicensePlistViewController.defaultTitle,
-                        headerHight: LicensePlistViewController.defaultHeaderHight)
+                        headerHeight: LicensePlistViewController.defaultHeaderHeight)
     }
 
     public required init(coder aDecoder: NSCoder) {
         super.init(style: .grouped)
         self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
                         title: LicensePlistViewController.defaultTitle,
-                        headerHight: LicensePlistViewController.defaultHeaderHight)
+                        headerHeight: LicensePlistViewController.defaultHeaderHeight)
     }
 
-    private func commonInit(plistPath: String?, title: String?, headerHight: CGFloat?) {
+    private func commonInit(plistPath: String?, title: String?, headerHeight: CGFloat?) {
         self.title = title
         self.items = LicensePlistParser.parse(plistPath: plistPath)
-        if headerHight == 0 {
+        if headerHeight == 0 {
             self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
-        } else if let headerHight = headerHight, headerHight > 0 {
-            self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: headerHight))
+        } else if let headerHeight = headerHeight, headerHeight > 0 {
+            self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: headerHeight))
         }
     }
 
