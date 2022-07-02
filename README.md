@@ -76,11 +76,13 @@ license-plist
 
 `com.mono0926.LicensePlist.Output` directory will be generated.
 
-### Add refecense
+### Add reference
 
 Add reference `com.mono0926.LicensePlist.plist` file and `com.mono0926.LicensePlist` directory to source tree.
-
 ![XCode screen shot](doc/xcode.png)
+
+Under Target > Build Phases > Copy Bundle Resources script, add these files.
+![XCode screen shot](doc/xcode2.png)
 
 ### Call LicensePlistViewController
 
