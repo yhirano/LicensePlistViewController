@@ -34,15 +34,17 @@ open class LicensePlistViewController: UITableViewController {
 
     public convenience init(fileNamed fileName: String,
                             title: String? = LicensePlistViewController.defaultTitle,
-                            headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight) {
+                            headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
+                            tableViewStyle: UITableView.Style = .grouped) {
         let path = Bundle.main.path(forResource: fileName, ofType: "plist")
-        self.init(plistPath: path, title: title, headerHeight: headerHeight)
+        self.init(plistPath: path, title: title, headerHeight: headerHeight, tableViewStyle: tableViewStyle)
     }
 
     public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
                 title: String? = LicensePlistViewController.defaultTitle,
-                headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight) {
-        super.init(style: .grouped)
+                headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
+                tableViewStyle: UITableView.Style = .grouped) {
+        super.init(style: tableViewStyle)
         self.commonInit(plistPath: plistPath, title: title, headerHeight: headerHeight)
     }
 
