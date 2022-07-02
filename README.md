@@ -91,6 +91,13 @@ let viewController = LicensePlistViewController()
 self.navigationController?.pushViewController(viewController, animated: true)
 ```
 
+Can change the style of the table if you needed.
+
+|Code|Screen shot|
+|---|:---:|
+|`LicensePlistViewController()`<br/> or<br/> `LicensePlistViewController(tableViewStyle: .grouped)`| <img src="doc/screenshot1.png" width="390" /> |
+|`LicensePlistViewController(tableViewStyle: .insetGrouped)`<br/> (Only available in iOS 13.0 or newer)| <img src="doc/screenshot3.png" width="390" /> |
+
 ## References
 
 * [LicensePlist](https://github.com/mono0926/LicensePlist/)
