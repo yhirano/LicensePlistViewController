@@ -10,8 +10,9 @@ LicensePlistViewController
 
 LicensePlistViewController is ViewController for [LicensePlist](https://github.com/mono0926/LicensePlist/).
 
-<img src="doc/screenshot1.png" width="390" />
-<img src="doc/screenshot2.png" width="390" />
+|![Screen shot](doc/screenshot1.png)|![Screen shot](doc/screenshot2.png)|
+|:---:|:---:|
+|List|Detail|
 
 ## Requirements
 
