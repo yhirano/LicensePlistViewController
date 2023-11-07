@@ -64,7 +64,6 @@ internal class LicensePlistDetailViewController: UIViewController {
         textView?.text = item.text
     }
 
-    @available(iOS 11.0, *)
     override func viewLayoutMarginsDidChange() {
         super.viewLayoutMarginsDidChange()
 
