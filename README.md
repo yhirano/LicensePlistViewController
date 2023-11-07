@@ -45,7 +45,7 @@ Simply add the following line to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yhirano/LicensePlistViewController.git", from: "2.2.0")
+    .package(url: "https://github.com/yhirano/LicensePlistViewController.git", from: "2.3.0")
 ]
 ```
 
