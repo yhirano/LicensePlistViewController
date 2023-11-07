@@ -22,9 +22,20 @@
 import UIKit
 
 open class LicensePlistViewController: UITableViewController {
+    public enum CellIndicator {
+        case accessoryType(accessoryType: UITableViewCell.AccessoryType)
+        case image(image: UIImage, width: CGFloat? = nil)
+    }
+
     public static let defaultPlistPath = Bundle.main.path(forResource: "com.mono0926.LicensePlist", ofType: "plist")
     public static let defaultTitle = "License"
     public static let defaultHeaderHeight: CGFloat? = nil
+    public static let defaultTextColor: UIColor? = nil
+    public static let defaultLinkTextColor: UIColor? = nil
+    public static let defaultBackgroundColor: UIColor? = nil
+    public static let defaultCellIndicator: CellIndicator? = CellIndicator.accessoryType(accessoryType: .disclosureIndicator)
+    public static let defaultCellBackgroundColor: UIColor? = nil
+    public static let defaultSelectedCellBackgroundColor: UIColor? = nil
 
     private var items: [Item] = [] {
         didSet {
@@ -32,37 +43,107 @@ open class LicensePlistViewController: UITableViewController {
         }
     }
 
-    public convenience init(fileNamed fileName: String,
-                            title: String? = LicensePlistViewController.defaultTitle,
-                            headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
-                            tableViewStyle: UITableView.Style = .grouped) {
+    private var textColor: UIColor? = LicensePlistViewController.defaultTextColor
+    private var linkTextColor: UIColor? = LicensePlistViewController.defaultLinkTextColor
+    private var backgroundColor: UIColor? = LicensePlistViewController.defaultBackgroundColor
+    private var cellIndicator: CellIndicator? = LicensePlistViewController.defaultCellIndicator
+    private var cellBackgroundColor: UIColor? = LicensePlistViewController.defaultCellBackgroundColor
+    private var selectedCellBackgroundColor: UIColor? = LicensePlistViewController.defaultSelectedCellBackgroundColor
+
+    public convenience init(
+        fileNamed fileName: String,
+        title: String? = LicensePlistViewController.defaultTitle,
+        headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
+        tableViewStyle: UITableView.Style = .grouped,
+        textColor: UIColor? = LicensePlistViewController.defaultTextColor,
+        linkTextColor: UIColor? = LicensePlistViewController.defaultLinkTextColor,
+        backgroundColor: UIColor? = LicensePlistViewController.defaultBackgroundColor,
+        cellIndicator: CellIndicator? = LicensePlistViewController.defaultCellIndicator,
+        cellBackgroundColor: UIColor? = LicensePlistViewController.defaultCellBackgroundColor,
+        selectedCellBackgroundColor: UIColor? = LicensePlistViewController.defaultSelectedCellBackgroundColor
+    ) {
         let path = Bundle.main.path(forResource: fileName, ofType: "plist")
-        self.init(plistPath: path, title: title, headerHeight: headerHeight, tableViewStyle: tableViewStyle)
+        self.init(
+            plistPath: path,
+            title: title,
+            headerHeight: headerHeight,
+            tableViewStyle: tableViewStyle,
+            textColor: textColor,
+            linkTextColor: linkTextColor,
+            backgroundColor: backgroundColor,
+            cellIndicator: cellIndicator,
+            cellBackgroundColor: cellBackgroundColor,
+            selectedCellBackgroundColor: selectedCellBackgroundColor
+        )
     }
 
-    public init(plistPath: String? = LicensePlistViewController.defaultPlistPath,
-                title: String? = LicensePlistViewController.defaultTitle,
-                headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
-                tableViewStyle: UITableView.Style = .grouped) {
+    public init(
+        plistPath: String? = LicensePlistViewController.defaultPlistPath,
+        title: String? = LicensePlistViewController.defaultTitle,
+        headerHeight: CGFloat? = LicensePlistViewController.defaultHeaderHeight,
+        tableViewStyle: UITableView.Style = .grouped,
+        textColor: UIColor? = LicensePlistViewController.defaultTextColor,
+        linkTextColor: UIColor? = LicensePlistViewController.defaultLinkTextColor,
+        backgroundColor: UIColor? = LicensePlistViewController.defaultBackgroundColor,
+        cellIndicator: CellIndicator? = LicensePlistViewController.defaultCellIndicator,
+        cellBackgroundColor: UIColor? = LicensePlistViewController.defaultCellBackgroundColor,
+        selectedCellBackgroundColor: UIColor? = LicensePlistViewController.defaultSelectedCellBackgroundColor
+    ) {
         super.init(style: tableViewStyle)
-        self.commonInit(plistPath: plistPath, title: title, headerHeight: headerHeight)
+        self.commonInit(
+            plistPath: plistPath,
+            title: title,
+            headerHeight: headerHeight,
+            textColor: textColor,
+            linkTextColor: linkTextColor,
+            backgroundColor: backgroundColor,
+            cellIndicator: cellIndicator,
+            cellBackgroundColor: cellBackgroundColor,
+            selectedCellBackgroundColor: selectedCellBackgroundColor
+        )
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(style: .grouped)
-        self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
-                        title: LicensePlistViewController.defaultTitle,
-                        headerHeight: LicensePlistViewController.defaultHeaderHeight)
+        self.commonInit(
+            plistPath: LicensePlistViewController.defaultPlistPath,
+            title: LicensePlistViewController.defaultTitle,
+            headerHeight: LicensePlistViewController.defaultHeaderHeight,
+            textColor: LicensePlistViewController.defaultTextColor,
+            linkTextColor: LicensePlistViewController.defaultLinkTextColor,
+            backgroundColor: LicensePlistViewController.defaultBackgroundColor,
+            cellIndicator: LicensePlistViewController.defaultCellIndicator,
+            cellBackgroundColor: LicensePlistViewController.defaultCellBackgroundColor,
+            selectedCellBackgroundColor: LicensePlistViewController.defaultSelectedCellBackgroundColor
+        )
     }
 
     public required init(coder aDecoder: NSCoder) {
         super.init(style: .grouped)
-        self.commonInit(plistPath: LicensePlistViewController.defaultPlistPath,
-                        title: LicensePlistViewController.defaultTitle,
-                        headerHeight: LicensePlistViewController.defaultHeaderHeight)
+        self.commonInit(
+            plistPath: LicensePlistViewController.defaultPlistPath,
+            title: LicensePlistViewController.defaultTitle,
+            headerHeight: LicensePlistViewController.defaultHeaderHeight,
+            textColor: LicensePlistViewController.defaultTextColor,
+            linkTextColor: LicensePlistViewController.defaultLinkTextColor,
+            backgroundColor: LicensePlistViewController.defaultBackgroundColor,
+            cellIndicator: LicensePlistViewController.defaultCellIndicator,
+            cellBackgroundColor: LicensePlistViewController.defaultCellBackgroundColor,
+            selectedCellBackgroundColor: LicensePlistViewController.defaultSelectedCellBackgroundColor
+        )
     }
 
-    private func commonInit(plistPath: String?, title: String?, headerHeight: CGFloat?) {
+    private func commonInit(
+        plistPath: String?,
+        title: String?,
+        headerHeight: CGFloat?,
+        textColor: UIColor?,
+        linkTextColor: UIColor?,
+        backgroundColor: UIColor?,
+        cellIndicator: CellIndicator?,
+        cellBackgroundColor: UIColor?,
+        selectedCellBackgroundColor: UIColor?
+    ) {
         self.title = title
         self.items = LicensePlistParser.parse(plistPath: plistPath)
         if headerHeight == 0 {
@@ -70,6 +151,15 @@ open class LicensePlistViewController: UITableViewController {
         } else if let headerHeight = headerHeight, headerHeight > 0 {
             self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: headerHeight))
         }
+        if let backgroundColor = backgroundColor {
+            tableView.backgroundColor = backgroundColor
+        }
+        self.textColor = textColor
+        self.linkTextColor = linkTextColor
+        self.backgroundColor = backgroundColor
+        self.cellIndicator = cellIndicator
+        self.cellBackgroundColor = cellBackgroundColor
+        self.selectedCellBackgroundColor = selectedCellBackgroundColor
     }
 
     open override func viewDidLoad() {
@@ -109,18 +199,52 @@ extension LicensePlistViewController {
 
         let item = items[indexPath.row]
         cell.textLabel?.text = item.title
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+
+        switch cellIndicator {
+        case let .accessoryType(accessoryType):
+            cell.accessoryType = accessoryType
+            cell.accessoryView = nil
+        case let .image(image, width):
+            cell.accessoryType = .none
+            let indicatorImageView = UIImageView(image: image)
+            let indicatorView = UIView(frame: CGRect(x: 0, y: 0, width: width ?? indicatorImageView.frame.width, height: cell.frame.height))
+            indicatorView.addSubview(indicatorImageView)
+            indicatorImageView.translatesAutoresizingMaskIntoConstraints = false
+            indicatorImageView.trailingAnchor.constraint(equalTo: indicatorView.trailingAnchor, constant: 0).isActive = true
+            indicatorImageView.centerYAnchor.constraint(equalTo: indicatorView.centerYAnchor, constant: 0).isActive = true
+            cell.accessoryView = indicatorView
+        case .none:
+            cell.accessoryType = .none
+            cell.accessoryView = nil
+        }
+
+        if let textColor = self.textColor {
+            cell.textLabel?.textColor = textColor
+        }
+        if let cellBackgroundColor = self.cellBackgroundColor {
+            cell.backgroundColor = cellBackgroundColor
+        }
+        if let selectedCellBackgroundColor = self.selectedCellBackgroundColor {
+            let selectedBackgroundView = UIView()
+            selectedBackgroundView.backgroundColor = selectedCellBackgroundColor
+            cell.selectedBackgroundView = selectedBackgroundView
+        }
 
         return cell
     }
 }
 
-// MARK: - PadingTablewViewDelegate
+// MARK: - UITableViewDelegate
 
 extension LicensePlistViewController {
      open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
-        let viewController = LicensePlistDetailViewController(item: item)
+         let viewController = LicensePlistDetailViewController(
+            item: item,
+            textColor: textColor,
+            linkTextColor: linkTextColor,
+            backgroundColor: backgroundColor
+         )
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

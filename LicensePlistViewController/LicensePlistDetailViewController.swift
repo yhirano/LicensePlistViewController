@@ -26,14 +26,23 @@ internal class LicensePlistDetailViewController: UIViewController {
     private let bottomMargin: CGFloat = 16
 
     private let item: Item
+    private let textColor: UIColor?
+    private let linkTextColor: UIColor?
+    private let backgroundColor: UIColor?
 
     private weak var textView: UITextView?
 
-    init(item: Item) {
+    init(item: Item, textColor: UIColor?, linkTextColor: UIColor?, backgroundColor: UIColor?) {
         self.item = item
+        self.linkTextColor = linkTextColor
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
 
         super.init(nibName: nil, bundle: nil)
         self.title = item.title
+        if let backgroundColor = backgroundColor {
+            view.backgroundColor = backgroundColor
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,6 +58,15 @@ internal class LicensePlistDetailViewController: UIViewController {
         textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         textView.isEditable = false
         textView.dataDetectorTypes = .link
+        if let textColor = self.textColor {
+            textView.textColor = textColor
+        }
+        if let linkTextColor = self.linkTextColor {
+            textView.linkTextAttributes = [.foregroundColor: linkTextColor]
+        }
+        if let backgroundColor = self.backgroundColor {
+            textView.backgroundColor = backgroundColor
+        }
         view.addSubview(textView)
 
         self.textView = textView
@@ -71,9 +89,11 @@ internal class LicensePlistDetailViewController: UIViewController {
     }
 
     private func updateTextViewInsets() {
-        textView?.textContainerInset = UIEdgeInsets.init(top: topMargin,
-                                                        left: self.view.layoutMargins.left,
-                                                        bottom: bottomMargin,
-                                                        right: self.view.layoutMargins.right)
+        textView?.textContainerInset = .init(
+            top: topMargin,
+            left: self.view.layoutMargins.left,
+            bottom: bottomMargin,
+            right: self.view.layoutMargins.right
+        )
     }
 }
