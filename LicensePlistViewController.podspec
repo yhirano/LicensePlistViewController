@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source_files  = "LicensePlistViewController/*.swift"
   s.swift_version = "5.0"
   s.requires_arc = true
+  s.resource_bundles = {"LicensePlistViewController" => ["LicensePlistViewController/PrivacyInfo.xcprivacy"]}
 end
