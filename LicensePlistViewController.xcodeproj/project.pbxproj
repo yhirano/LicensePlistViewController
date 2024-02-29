@@ -20,6 +20,7 @@
 		8E1830852107DBFB00352CF4 /* String+FilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1830842107DBFB00352CF4 /* String+FilePath.swift */; };
 		8E1830A92107F82600352CF4 /* com.mono0926.LicensePlist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1830A82107F82600352CF4 /* com.mono0926.LicensePlist */; };
 		8EECE97A21C6884000A78DF9 /* LicensePlistViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E18304C2107BBA000352CF4 /* LicensePlistViewController.framework */; };
+		AAF934DA2B90C8F200E1FFA4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AAF934D92B90C8F200E1FFA4 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8E1830822107CB6B00352CF4 /* LicensePlistParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlistParser.swift; sourceTree = "<group>"; };
 		8E1830842107DBFB00352CF4 /* String+FilePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FilePath.swift"; sourceTree = "<group>"; };
 		8E1830A82107F82600352CF4 /* com.mono0926.LicensePlist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = com.mono0926.LicensePlist; sourceTree = "<group>"; };
+		AAF934D92B90C8F200E1FFA4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				8E18307E2107C50A00352CF4 /* Item.swift */,
 				8E1830842107DBFB00352CF4 /* String+FilePath.swift */,
 				8E1830502107BBA000352CF4 /* Info.plist */,
+				AAF934D92B90C8F200E1FFA4 /* PrivacyInfo.xcprivacy */,
 			);
 			path = LicensePlistViewController;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF934DA2B90C8F200E1FFA4 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
